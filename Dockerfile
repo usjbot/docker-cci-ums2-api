@@ -1,4 +1,4 @@
-FROM circleci/php:7.2-node-browsers
+FROM circleci/php:7.3-node-browsers
 
 RUN apt install -y libsqlite3-dev zlib1g-dev && \
     pecl install apcu-5.1.8 && \
