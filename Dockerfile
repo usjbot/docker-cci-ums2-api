@@ -28,4 +28,4 @@ RUN sudo apt-get update && sudo apt-get install -y --no-install-recommends \
     sudo docker-php-ext-enable --ini-name 06-imagick.ini imagick && \
     sudo docker-php-ext-enable --ini-name 07-imap.ini imap && \
     sudo docker-php-ext-enable ldap sockets gd amqp && \
-    rm -rf /var/lib/apt/lists/*
+    sudo rm -rf /var/lib/apt/lists/*
