@@ -5,14 +5,14 @@ FROM circleci/php:7.3-node-browsers
 #     sudo docker-php-ext-install zip pdo_sqlite && \
 #     sudo docker-php-ext-enable --ini-name 20-apcu.ini apcu
 
-ENV PERSISTENT_DEPS libmongoc-1.0-0 libpq5 libldap-common zlib1g libicu63 zip librabbitmq4
+ENV PERSISTENT_DEPS libpq5 libldap-common zlib1g libicu63 zip librabbitmq4
 
 RUN sudo apt-get update && sudo apt-get install -y --no-install-recommends \
     $PERSISTENT_DEPS \
     git && \
     sudo rm -rf /var/lib/apt/lists/*
 
-ENV BUILD_DEPS libmongoc-dev libc-client-dev libpq-dev libldap-dev zlib1g-dev libicu-dev libkrb5-dev libgcrypt20-dev libmagickwand-dev libzip-dev librabbitmq-dev
+ENV BUILD_DEPS libc-client-dev libpq-dev libldap-dev zlib1g-dev libicu-dev libkrb5-dev libgcrypt20-dev libmagickwand-dev libzip-dev librabbitmq-dev
 
 ENV APCU_VERSION 5.1.18
 ENV XDEBUG_VERSION 2.9.0
